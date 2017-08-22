@@ -1,0 +1,42 @@
+struct Celda{
+	int dato;
+	Celda *sig;
+};
+
+
+void Muestra(Celda *l)
+{
+	while(l!=0)
+	{
+		cout << l-> dato << " " ;
+		l=l->sig;
+	}
+}
+
+Celda* Mezcla(Celda *l1, Celda *l2)
+{
+	Celda *l=NULL;
+	while(l1 !=NULL && l2 !=NULL)
+	{
+		Celda *aux;
+		if(l1->dato < l2->dato)
+		{
+			aux=l1;
+			l1=l1->sig;
+		}
+		else
+		{
+			aux=l2;
+			l2 = l2->sig;
+		}
+		aux -> sig=l;
+		l=aux;
+
+		while(l1){
+			celda *aux=l1;
+			l1 = l1->sig;
+			aux->sig=l;
+			l=aux;
+}
+	return l;
+}
